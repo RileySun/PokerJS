@@ -1,0 +1,92 @@
+.Play-Area {
+	display: block;
+	position: relative;
+	width: 100%;
+	height: 500px;
+}
+.Card-Area {
+	position: absolute;
+	width: 40%;
+	height: 14em;
+	margin: 0% auto;
+	top: 3%;
+	left: 0%;
+	right: 0;
+	background: #000;
+	text-align: center;
+	font-size: 22px;
+	border: 3px solid #000;
+	border-radius: 20px;
+}
+.Button {
+	margin: 4% 0%;
+	padding: 0% 3%;
+	font-size: 29px;
+	background: #A9A9A9;
+	color: #FFF;
+	border-radius: 20px;
+	border-style: none;
+	
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.Button:active {
+	background: #ECE9E9;
+}
+.Result {
+	width: 60%;
+	min-height: 1em;
+	margin: 4% auto 0%;
+	padding: 3% 0%;
+	background: #A9A9A9;
+	color: #FFF;
+	font-size: 1.3em;
+	border-radius: 20px;
+}
+.Hand {
+	position: absolute;
+	width: 80%;
+	margin: 0% auto;
+	padding: 4% 1%;
+	left: 0;
+	right: 0;
+	bottom: 7%;
+	background: #A9A9A9;
+	text-align: center;
+	border: 2px solid #000;
+	border-radius: 20px;
+}
+.Card {
+	display: inline-block;
+	width: 10%;
+	padding: 2% 0;
+	margin: 0% 3%;
+	background: #FFF;
+	border: 2px solid #000;
+}
+.Red-Card {
+	color: #000;
+	border-color: #000;
+}
+.Black-Card {
+	color: #C00;
+	border-color: #C00;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1000px) {
+	.Card-Area {width: 80% !important; height: 16em !important;}
+	.Button {margin: 4% 0% 2% !important; padding: 1% 7% !important;}
+	.Card {padding: 3% 0 !important;}
+}
+@media screen and (max-width: 767px) {
+	.Card-Area {width: 95% !important; height: 18em !important; padding: 10% 0 0 !important;}
+	.Button {margin: 4% 3% !important; padding: 3% 7% !important;}
+	.Result {width: 80% !important;}
+	.Card {width: 1.9em !important; margin: 0% 1% !important; padding: 3% 0 !important;}
+}
+
+/*Extra*/
+.Button::-moz-focus-inner {border: none;}
