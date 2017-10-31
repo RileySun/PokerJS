@@ -10,15 +10,28 @@ var Hand = [];
 
 function newHand() {
 	for (var i = 0; i < 5; i++) {
-		Hand[i] = Math.floor((Math.random() * 4) + 1);
-		var decimel = (Math.floor(Math.random() * (13 + 1)) + 1) / 100;
-		if (decimel < 0.02) {
-			decimel += decimel + 0.01;
-		}
-		Hand[i] += decimel;
+		var card = createCard();		
+		if (Hand.length > 1) {
+			for (j = 0; j < Hand.length; j++) {
+				if (card == Hand[j]) {
+					card = createCard();
+				};
+			};
+		};//Make sure Not Duplicate (Serious Voodoo Code)
+		Hand[i] = card;
 	};
 	return Hand;
 };//Returns Hand in Array [card0, card1, card2, card3, card4]
+
+function createCard() {
+	var card = Math.floor((Math.random() * 4) + 1);
+	var decimel = (Math.floor(Math.random() * (13 + 1)) + 1) / 100;
+	if (decimel < 0.02) {
+		decimel += decimel + 0.01;
+	}
+	card += decimel;
+	return card;
+};//Create Card Function
 
 function sortCards(Hand) {
 	var sortedHand = Hand.sort();
@@ -241,16 +254,16 @@ function returnReadableCards(hand, target, classes) {
 		for (var i = 0; i < 5; i++) {
 			values[i] = {"suit": Math.floor(Hand[card]), "value": parseFloat((Hand[card] - (Math.floor(Hand[card]))).toFixed(2))};
 			switch (values[i].suit) {
-				case 1:
+				case 4:
 					cardDisplay.innerHTML = "&spades;";
 					break;
-				case 2:
+				case 3:
 					cardDisplay.innerHTML = "&hearts;";
 					break;
-				case 3:
+				case 2:
 					cardDisplay.innerHTML = "&diams;";
 					break;
-				case 4:
+				case 1:
 					cardDisplay.innerHTML = "&clubs;";
 					break;
 				default:
@@ -275,12 +288,12 @@ function returnReadableCards(hand, target, classes) {
 			};
 			
 			if (values[i].suit == 1 || values[i].suit == 4) {
-				cardDisplay.style.color = "#C00";
-				cardDisplay.style.borderColor = "#C00";
+				cardDisplay.style.color = "#000";
+				cardDisplay.style.borderColor = "#000";
 			}
 			else {
-				cardDisplay.style.color = "000";
-				cardDisplay.style.borderColor = "000";
+				cardDisplay.style.color = "#C00";
+				cardDisplay.style.borderColor = "#C00";
 			}
 		};
 		
