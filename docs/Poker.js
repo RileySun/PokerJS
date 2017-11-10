@@ -33,6 +33,26 @@ function createCard() {
 	return card;
 };//Create Card Function
 
+function discardCards(Hand, discardList) {
+	for (var value in discardList) {
+		var index = Hand.indexOf(discardList[value]);
+		
+		var newCard = createCard();
+		if (Hand.length > 1) {
+			for (j = 0; j < Hand.length; j++) {
+				if (newCard == Hand[j]) {
+					newCard = createCard();
+				};
+			};
+		};
+		
+		Hand.splice(index, 1, newCard);
+	};
+	
+	return Hand; 
+	
+}; //Discard certain Cards, Cards must be in Array even if only one card
+
 function sortCards(Hand) {
 	var sortedHand = Hand.sort();
 	return sortedHand;
@@ -242,7 +262,9 @@ function checkCards(hand) {
 };
 
 //Return Card List, Appends to target adds classes (classes must be array to account for multiple classes)
-function returnReadableCards(hand, target, classes) {
+//selectFunction is an optional addition that allows you to assign a function to the card that allows it to be selected.
+function returnReadableCards(hand, target, classes, selectFunction) {
+	var num = 0;
 	for (var card in hand) {
 		var cardDisplay = document.createElement("div");
 		
@@ -296,6 +318,13 @@ function returnReadableCards(hand, target, classes) {
 				cardDisplay.style.borderColor = "#C00";
 			}
 		};
+		
+		if (selectFunction != undefined) {
+			cardDisplay.addEventListener("click", selectFunction, false);
+		};
+		
+		cardDisplay.setAttribute("data-selected", 0);
+		cardDisplay.setAttribute("data-value", Hand[card]);
 		
 		target.appendChild(cardDisplay);
 	};
