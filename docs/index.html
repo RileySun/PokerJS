@@ -12,16 +12,20 @@
 	<body>
 		<div class="Play-Area">
 			<div class="Card-Area">
+				<span class="Player-Count-Label">Players: </span>
+				<input id="Player-Count" class="Player-Count" type="number" value="1" min="1" max="5"><br />
 				<input id="New-Hand" class="Button" type="button" value="New Hand">
 				<input id="Check-Cards" class="Button" type="button" value="Check Cards">
 				<input id="Discard-Cards" class="Button" type="button" value="Discard Cards">
 				<div id="Result" class="Result">???</div>
-				<div id="Hand" class="Hand">
-					<div class="Card Black-Card">&spades;A</div>
-					<div class="Card Red-Card">&hearts;A</div>
-					<div class="Card Red-Card">&diams;A</div>
-					<div class="Card Black-Card">&clubs;A</div>
-					<div class="Card Red-Card">&spades;K</div>
+				<div id="Players" class="Players">
+					<div id="Player1" class="Hand">
+						<div class="Card Black-Card">&spades;A</div>
+						<div class="Card Red-Card">&hearts;A</div>
+						<div class="Card Red-Card">&diams;A</div>
+						<div class="Card Black-Card">&clubs;A</div>
+						<div class="Card Red-Card">&spades;K</div>
+					</div>
 				</div>
 			</div>
 		</div>

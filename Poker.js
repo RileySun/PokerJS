@@ -208,6 +208,8 @@ function getHighCard(sortedHand) {
 	
 	highCard = parseFloat((highCard - (Math.floor(highCard))).toFixed(2)) * 100;
 	
+	//OLD K,Q,J,Num parser
+	/*
 	switch (Math.floor(highCard)) {
 		case 11:
 			highCard = "J";
@@ -224,38 +226,39 @@ function getHighCard(sortedHand) {
 		default:
 			break;
 	};
+	*/
 	
 	return highCard;
 };
 
 //Check If Any Were Triggered (If High Card, returns string as 1|valueOfHighCard)
 function checkCards(hand) {
-	if (checkFlush(sortCards(Hand)) && checkStraight(sortCards(Hand))) {
+	if (checkFlush(sortCards(hand)) && checkStraight(sortCards(hand))) {
 		result = 9;
 	}	//9 (Straight Flush)
-	else if (check4Kind(sortValues(Hand))) {
+	else if (check4Kind(sortValues(hand))) {
 		result = 8;
 	}								//8 (4 of a Kind)
-	else if (checkFullHouse(sortValues(Hand))) {
+	else if (checkFullHouse(sortValues(hand))) {
 		result = 7;
 	}							//7 (Full House)
-	else if (checkFlush(sortCards(Hand))) {
+	else if (checkFlush(sortCards(hand))) {
 		result = 6;
 	}									//6 (Flush)
-	else if (checkStraight(sortCards(Hand))) {
+	else if (checkStraight(sortCards(hand))) {
 		result = 5;
 	}								//5 (Straight)
-	else if (check3Kind(sortValues(Hand))) {
+	else if (check3Kind(sortValues(hand))) {
 		result = 4;
 	}								//4 (3 of a Kind)
-	else if (check2Pair(sortValues(Hand))) {
+	else if (check2Pair(sortValues(hand))) {
 		result = 3;
 	}								//3 (2 Pair)
-	else if (checkPair(sortValues(Hand))) {
+	else if (checkPair(sortValues(hand))) {
 		result = 2;
 	}									//2 (1 Pain)
 	else {
-		var highCard = getHighCard(sortValues(Hand));
+		var highCard = getHighCard(sortValues(hand));
 		result = 1 + "|" + highCard;
 	}																	//1|highCard (High Card)
 	return result;
@@ -326,6 +329,8 @@ function returnReadableCards(hand, target, classes, selectFunction) {
 		cardDisplay.setAttribute("data-selected", 0);
 		cardDisplay.setAttribute("data-value", Hand[card]);
 		
-		target.appendChild(cardDisplay);
+		if (target.nodeType == 1) {
+			target.appendChild(cardDisplay);
+		};
 	};
 };

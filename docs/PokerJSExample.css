@@ -5,9 +5,9 @@
 	height: 500px;
 }
 .Card-Area {
-	position: absolute;
+	position: relative;
 	width: 40%;
-	height: 14em;
+	height: auto;
 	margin: 0% auto;
 	top: 3%;
 	left: 0%;
@@ -17,6 +17,15 @@
 	font-size: 22px;
 	border: 3px solid #000;
 	border-radius: 20px;
+}
+.Player-Count-Label {
+	color: #FFFFFF;
+	font-size: 1.3em;
+}
+.Player-Count {
+	width: 7%;
+	text-align: center;
+	font-size: 1em;
 }
 .Button {
 	margin: 2% 0%;
@@ -47,9 +56,9 @@
 	border-radius: 20px;
 }
 .Hand {
-	position: absolute;
+	position: relative;
 	width: 80%;
-	margin: 0% auto;
+	margin: 3% auto;
 	padding: 4% 1%;
 	left: 0;
 	right: 0;
