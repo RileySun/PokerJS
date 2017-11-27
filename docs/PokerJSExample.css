@@ -92,15 +92,17 @@
 }
 
 @media screen and (min-width: 768px) and (max-width: 1000px) {
-	.Card-Area {width: 80% !important; height: 16em !important;}
-	.Button {margin: 4% 0% 2% !important; padding: 1% 7% !important;}
+	.Card-Area {width: 80% !important; padding: 2% 0 0 !important;}
+	.Button {margin: 4% 1% 2% !important; padding: 1% 2% !important;}
 	.Card {padding: 3% 0 !important;}
 }
 @media screen and (max-width: 767px) {
-	.Card-Area {width: 95% !important; height: 18em !important; padding: 10% 0 0 !important;}
-	.Button {margin: 4% 3% !important; padding: 3% 7% !important;}
-	.Result {width: 80% !important;}
-	.Card {width: 1.9em !important; margin: 0% 1% !important; padding: 3% 0 !important;}
+	.Card-Area {width: 95% !important; padding: 3% 0 0 !important;}
+	.Player-Count-Label {font-size: 1em !important;}
+	.Player-Count {width: 12% !important; font-size: 0.8em !important;}
+	.Button {margin: 2% 0 !important; padding: 0 4% !important; font-size: 1em !important;}
+	.Result {width: 80% !important; font-size: 1em !important;}
+	.Card {width: 2em !important; margin: 0% 1% !important; padding: 3% 1% !important; font-size: 0.7em !important;}
 }
 
 /*Extra*/
