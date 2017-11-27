@@ -6,9 +6,8 @@ By RileySun
 //Cards = 2-14 (2-Ace)
 */
 
-var Hand = [];
-
 function newHand() {
+	var Hand = [];
 	for (var i = 0; i < 5; i++) {
 		var card = createCard();		
 		if (Hand.length > 1) {
@@ -33,11 +32,14 @@ function createCard() {
 	return card;
 };//Create Card Function
 
+//REMOVE CONSOLE.LOGs
 function discardCards(Hand, discardList) {
+	
 	for (var value in discardList) {
 		var index = Hand.indexOf(discardList[value]);
 		
 		var newCard = createCard();
+		
 		if (Hand.length > 1) {
 			for (j = 0; j < Hand.length; j++) {
 				if (newCard == Hand[j]) {
@@ -277,7 +279,7 @@ function returnReadableCards(hand, target, classes, selectFunction) {
 		
 		var values = [];
 		for (var i = 0; i < 5; i++) {
-			values[i] = {"suit": Math.floor(Hand[card]), "value": parseFloat((Hand[card] - (Math.floor(Hand[card]))).toFixed(2))};
+			values[i] = {"suit": Math.floor(hand[card]), "value": parseFloat((hand[card] - (Math.floor(hand[card]))).toFixed(2))};
 			switch (values[i].suit) {
 				case 4:
 					cardDisplay.innerHTML = "&spades;";
@@ -327,7 +329,7 @@ function returnReadableCards(hand, target, classes, selectFunction) {
 		};
 		
 		cardDisplay.setAttribute("data-selected", 0);
-		cardDisplay.setAttribute("data-value", Hand[card]);
+		cardDisplay.setAttribute("data-value", hand[card]);
 		
 		if (target.nodeType == 1) {
 			target.appendChild(cardDisplay);
