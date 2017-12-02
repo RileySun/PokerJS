@@ -153,12 +153,13 @@ function selectCard() {
 	
 	if (selected == 0) {
 		this.setAttribute("data-selected", 1);
-		this.style.borderColor = "#FEED34"
+		this.classList.add("Selected");
 		selectedCards[arrayNum].push(parseFloat(value));
 	}
 	else {
 		this.setAttribute("data-selected", 0);
 		this.style.borderColor = this.style.color;
+		this.classList.remove("Selected");
 		selectedCards[arrayNum].splice(selectedCards[arrayNum].indexOf(parseFloat(value)), 1);
 	};	
 };

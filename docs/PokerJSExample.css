@@ -75,6 +75,8 @@
 	margin: 0% 3%;
 	background: #FFF;
 	border: 2px solid #000;
+	-webkit-transition: tranform 0.5s ease-in-out;
+	transition: transform 0.5s ease-in-out;
 	-webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -89,6 +91,13 @@
 .Black-Card {
 	color: #C00;
 	border-color: #C00;
+}
+.Selected {
+	transform: translate(0, -29%);
+	border-color: #FEED34 !important;
+}
+.Discard {
+	animation: fadeOutUp 4s;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1000px) {
